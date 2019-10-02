@@ -1,0 +1,12 @@
+.container{
+    display: grid;
+    /*modelo/tipo de columna, puedo definir cuantas cuolunmas quiero tener*/
+    grid-template-columns: 25% 50% 25%;
+    /*modelo/ tipo de fila, se puede defionir cuantas filas y el valor que temdrán*/
+    /* grid-template-rows: 300px 300px; */
+}
+.item{
+    background: lightblue;
+    padding: 10px;
+    border: 1px solid red;
+}
