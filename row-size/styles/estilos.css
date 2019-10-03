@@ -1,0 +1,70 @@
+.container{
+    /*grilla/ primero filas luego columnas*/
+    display: grid;
+    /*modelo/tipo de columna, puedo definir cuantas cuolunmas quiero tener*/
+    grid-template-columns: repeat(7,1fr);
+    /*modelo/ tipo de fila, se puede defionir cuantas filas y el valor que temdrán*/
+    grid-template-rows: repeat(2,200px);
+    /*define filas y columnas automaticamente,
+    primero se definen las filas y luego las columnas */
+    
+    /*grid-template: 300px 100px 100px / repeat(4, 1fr); ----> repeat= permite repetir
+    una funcion en específico que se le quiera dar al espacio de las columnas*/
+
+   /*  grid-template: 100px 1fr 150px/ 200px 1fr; */
+    height: 100vh;
+
+    /*grilla acomodada en áreas*/
+    grid-template-areas: "header header"
+                          "left container"
+                          "footer footer";
+
+
+
+    /*minmax()--> permite asignar un máximo de columna seguido de el máximo de espacio a ocupar*/
+    /* grid-template: 300px 100px 100px / repeat(4, minmax(200px, 1fr)); */
+
+    /*colocar espaciado entre columnas/filas*/
+    /* grid-column-gap: 20px;
+    grid-row-gap: 30px; */
+    /*primero filas luego columnas*/
+    grid-gap: 5px; 
+    /*fracciones, para dividir los espacios de una manera exacta*/
+    /*fracciones= fr*/
+}
+.item{
+    background: lightblue;
+    padding: 10px;
+    border: 1px solid red;
+}
+/*permite seleccionar dentro de parentesis el elemento 
+de la clase seleccionada- donde deben estar enumeradas cada una*/
+.item:nth-of-type(1) {
+    /* background-color: blue; */
+    /*definir donde empieza y termina una columna*/
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+    grid-column: 1/ span 3;
+    grid-row: 1/span 2;
+}
+.item:nth-of-type(2){
+    grid-column: 4 /span 2;
+    grid-row: 1 / span 2;
+
+}
+.item:nth-of-type(3){
+    grid-column: 6 /span 2;
+}
+
+
+
+.item:nth-of-type(8){
+    /*donde empieza/termina la columna*/
+    /* grid-column:1 / span 2 ; */
+
+    /*que ocupe todo el ancho*/
+    /* grid-column:1 / -1 ; */
+}
+/* .item:nth-of-type(7){
+    grid-column: 2/ 4;
+} */
