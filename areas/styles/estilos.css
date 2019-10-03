@@ -1,0 +1,67 @@
+.container{
+    /*grilla/ primero filas luego columnas*/
+    display: grid;
+    /*modelo/tipo de columna, puedo definir cuantas cuolunmas quiero tener*/
+    grid-template-columns: 25% 50% 25%;
+    /*modelo/ tipo de fila, se puede defionir cuantas filas y el valor que temdrán*/
+    grid-template-rows: 300px 300px;
+    /*define filas y columnas automaticamente,
+    primero se definen las filas y luego las columnas */
+    
+    /*grid-template: 300px 100px 100px / repeat(4, 1fr); ----> repeat= permite repetir
+    una funcion en específico que se le quiera dar al espacio de las columnas*/
+
+    grid-template: 100px 1fr 150px/ 200px 1fr;
+    height: 100vh;
+
+    /*grilla acomodada en áreas*/
+    grid-template-areas: "header header"
+                          "left container"
+                          "footer footer";
+
+
+
+    /*minmax()--> permite asignar un máximo de columna seguido de el máximo de espacio a ocupar*/
+    /* grid-template: 300px 100px 100px / repeat(4, minmax(200px, 1fr)); */
+
+    /*colocar espaciado entre columnas/filas*/
+    /* grid-column-gap: 20px;
+    grid-row-gap: 30px; */
+    /*primero filas luego columnas*/
+    grid-gap: 5px;
+    /*fracciones, para dividir los espacios de una manera exacta*/
+    /*fracciones= fr*/
+}
+.item{
+    background: lightblue;
+    padding: 10px;
+    border: 1px solid red;
+}
+/*permite seleccionar dentro de parentesis el elemento 
+de la clase seleccionada- donde deben estar enumeradas cada una*/
+.item:nth-of-type(4) {
+    background-color: blue;
+    /*para tener o scroll dentro de un elemento*/
+    overflow: auto;
+    display: grid;
+    /*grilla en linea*/
+    /*display:inline-grid*/
+    /* grid-template: 50px 50px 50px / 50% 200px 100px; */
+}
+.item .item{
+    background-color: yellow;
+}
+
+.header{
+    /*espacio que ocuparía/ propiedad agregada a los grid items*/
+    grid-area: header;
+}
+.left{
+    grid-area: left;
+}
+.contenido{
+    grid-area: left contenido;
+}
+.footer{
+    grid-area: footer;
+}
