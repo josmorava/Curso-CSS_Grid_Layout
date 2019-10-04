@@ -2,17 +2,25 @@ body{
     margin: 0;
     font-family: arial;
 }
+.post-list{
+    display:grid;
+    grid-template-columns: repeat(3, minmax(100px, 293px));
+    justify-content: center;
+    grid-gap:28px;
+}
 
 .post{
     cursor: pointer;
     position: relative;
-    width:200px;
     display: block;
 }
-
+.post-image{
+    margin: 0;
+}
 .post-image img{
     width: 100%;
     vertical-align: top;
+    border-radius: 5px;
 }
 .post-overlay{
     background: rgba(0,0, 0, .3);
@@ -38,4 +46,10 @@ body{
     width: 50px;
     font-weight: bold;
     display: inline-block;
+}
+
+@media screen and (max-width: 768px){
+    .post-list{
+        grid-gap: 3px;
+    }
 }
