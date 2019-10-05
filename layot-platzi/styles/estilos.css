@@ -1,0 +1,116 @@
+body{
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+}
+.hero{
+    color: white;
+    padding: 32px 15px;
+    background: #23475b;
+    display: grid;
+    grid-template-columns: minmax(auto, 1024px);
+    justify-content: center;
+}
+.hero-container{
+
+    display: grid;
+    /*configurando las áreas a usar*/
+    grid-template-areas: "badge title form"
+                /*. --> fila en blanco o espacio*/ 
+                        ". description form"
+                        ". countdown form" ;
+    grid-template-columns:70px 1fr 320px ;
+    grid-gap:10px;
+}
+/*definiendo las áreas*/
+.badge{
+    grid-area: badge;
+}
+.badge img{
+    max-width: 70px;
+}
+.title{
+    /*definiendo las áreas*/
+    grid-area: title;
+    font-size: 36px;
+    font-weight: normal;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.form{
+    /*definiendo las áreas*/
+    grid-area: form;
+    text-align: center;
+    background: rgb(255,255,255, .8);
+    padding: 1.5em;
+    border-radius: 10px;
+}
+.form input{
+    width:100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #dbdbe2;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 6px;
+}
+.form p{
+    font-size: 20px;
+    color: #3a3b3f;
+    margin-bottom: 1em;
+    font-weight: 700;
+}
+.form button{
+    background: #98ca3f;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border-bottom: 5px solid #6d932b;
+    display: inline-block;
+    font-size: 16px;
+}
+.countdown{
+    /*definiendo las áreas*/
+    grid-area: countdown;
+}
+.countdown p{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 300;
+}
+.countdown span{
+    font-size: 33px;
+}
+.countdown span:after{
+    content: ":";
+    display: inline-block;
+    margin: 0 5px;
+}
+.countdown span:last-child::after{
+    display: none;
+
+}
+p{
+    margin: 0;
+}
+.description{
+    /*definiendo las áreas*/
+    grid-area: description;
+}
+
+
+@media screen and (max-width: 768px){
+    .hero-container{
+        display: grid;
+    /*configurando las áreas a usar*/
+    grid-template-areas: "badge title"
+                /*. --> fila en blanco o espacio*/ 
+                        "description description "
+                        "form form"
+                        "countdown countdown " ;
+    grid-template-columns:70px 1fr ;
+    
+}
+    
+
+}
